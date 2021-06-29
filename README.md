@@ -27,7 +27,7 @@ A streamfiler egy porton figyelő alkalmazás, ami a csatlakozott connection tar
     
 # Fordíts
 #### Make nélkül
-g++ main.cpp posixserver.cpp argumentreader.cpp filesavemanager.cpp filesaver.cpp -std=c++17 -lstdc++fs -lpthread
+g++ main.cpp posixserver.cpp argumentreader.cpp filesavemanager.cpp filesaver.cpp -std=c++17 -lstdc++fs -lpthread -Wall -O2 -o streamfiler
 #### Make-kel
 A forrás gyökerében ki kell adni a make parancsot
 
