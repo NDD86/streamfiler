@@ -56,7 +56,7 @@ struct ArgumentReader{
             \param[in] ind   - Argumentum indexe
             \return    Beolvasott paraméter értéke
         */
-        uint64_t ReadArgToUInt(int argc, char* param, uint32_t ind);
+        uint64_t ReadArgToUInt(int argc, char* param, int32_t ind);
         /*!
             \fn        int64_t  ReadArgToInt(int argc, char* param, uint32_t ind)
             \brief     Számmá konvertál egy argumentumot
@@ -65,7 +65,7 @@ struct ArgumentReader{
             \param[in] ind   - Argumentum indexe
             \return    Beolvasott paraméter értéke
         */
-        int64_t  ReadArgToInt(int argc, char* param, uint32_t ind);
+        int64_t  ReadArgToInt(int argc, char* param, int32_t ind);
         /*!
             \fn        void ReadArgs(int argc, char *argv[])
             \brief     Argumentumok feldolgozása, és ellenőrzése

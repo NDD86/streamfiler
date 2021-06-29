@@ -57,7 +57,7 @@ void ArgumentReader::PrintHelp(const char* message){
     throw message;   
 }
 
-uint64_t ArgumentReader::ReadArgToUInt(int argc, char* param, uint32_t ind){
+uint64_t ArgumentReader::ReadArgToUInt(int argc, char* param, int32_t ind){
     // Ha van elég paraméter akkor átkonvetáljuk
     if(ind<argc){
         return std::stoull(param);
@@ -68,7 +68,7 @@ uint64_t ArgumentReader::ReadArgToUInt(int argc, char* param, uint32_t ind){
     return 0;
 }
 
-int64_t ArgumentReader::ReadArgToInt(int argc, char* param, uint32_t ind){
+int64_t ArgumentReader::ReadArgToInt(int argc, char* param, int32_t ind){
     // Ha van elég paraméter akkor átkonvetáljuk
     if(ind<argc){
         return std::stoll(param);
@@ -79,7 +79,7 @@ int64_t ArgumentReader::ReadArgToInt(int argc, char* param, uint32_t ind){
 }
 
 void ArgumentReader::ReadArgs(int argc, char *argv[]){
-    for(uint32_t i = 1; i<argc; ++i){
+    for(int32_t i = 1; i<argc; ++i){
         // Kapcsló következik
         if(argv[i][0] == '-'){
             // Nincs meg milyen kapcsoló, az argumentum csak egy - jel volt ez hiba
