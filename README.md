@@ -24,7 +24,8 @@ A streamfiler egy porton figyelő alkalmazás, ami a csatlakozott connection tar
 
 -t timeout
     - Azt az időt határozza meg másodpercben, ami után a program bontja az idle connection-öket. Timeout -1 esetén nem bontja.
-    
+# Program struktúrája
+![](https://raw.githubusercontent.com/NDD86/streamfiler/main/structure.bmp)
 # Fordíts
 #### Make nélkül
 g++ main.cpp posixserver.cpp argumentreader.cpp filesavemanager.cpp filesaver.cpp histomaker.cpp -std=c++17 -lstdc++fs -lpthread -lpng -lz -Wall -O2 -o streamfiler
