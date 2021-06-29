@@ -27,9 +27,12 @@ A streamfiler egy porton figyelő alkalmazás, ami a csatlakozott connection tar
     
 # Fordíts
 #### Make nélkül
-g++ main.cpp posixserver.cpp argumentreader.cpp filesavemanager.cpp filesaver.cpp -std=c++17 -lstdc++fs -lpthread -Wall -O2 -o streamfiler
+g++ main.cpp posixserver.cpp argumentreader.cpp filesavemanager.cpp filesaver.cpp histomaker.cpp -std=c++17 -lstdc++fs -lpthread -lpng -lz -Wall -O2 -o streamfiler
 #### Make-kel
 A forrás gyökerében ki kell adni a make parancsot
+#### Használt eszközök
+* BMP olvasásra ,írásra a http://partow.net/programming/bitmap/index.html oldalon található hpp filet használtam
+* PNG olvasásra a libpng-t
 
 # Tesztelési esetek
 #### Posix szerver
@@ -70,3 +73,13 @@ A forrás gyökerében ki kell adni a make parancsot
 * Leállítás 1 futó kliensel
 * Leállíts 1 lekapcsolódott kliensel
 * Leállítás több futó kliensel
+#### Hisztogram teszt
+* PNG beolvasás
+* BMP beolvasás
+* BMP mentés
+* BMP belvasás majd hisztogram készités
+* PNG belvasás majd hisztogram készités
+* PNG belvasás majd hisztogram készités és kimentés
+* BMP belvasás majd hisztogram készités és kimentés
+* BMP fogadása szerver oldalon
+* PNG fogadása szerver oldalon

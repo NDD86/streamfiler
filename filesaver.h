@@ -9,7 +9,9 @@
 #define FILE_SAVER
 
 #include "saverinterface.h"
+#include "histomaker.h"
 #include <fstream>
+#include <memory>
 
 /*!
     \class FileSaver
@@ -28,7 +30,11 @@ class FileSaver: public SaverInterface{
         FileSaver(const FileSaver&) = delete;
         FileSaver(FileSaver&&) = delete;
 
-        virtual ~FileSaver(){}
+        /*!
+            \fn     ~FileSaver
+            \brief  Histogram készítés
+        */
+        virtual ~FileSaver();
 
         /*!
             \fn        virtual uint64_t Write(const char* buffer, int64_t bufferlen) override
@@ -42,6 +48,7 @@ class FileSaver: public SaverInterface{
     private:
 
         std::ofstream file; /*< Ebbe a fileba mentődnek az adatok */
+        std::string fileName; /*< A file neve amibe az adatok kerülnek */
 };
 
 #endif // FILE_SAVER

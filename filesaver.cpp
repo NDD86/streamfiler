@@ -11,6 +11,25 @@ FileSaver::FileSaver(std::string path){
     file.open(path.c_str() ,std::ios::binary);
     // Ha nem sikerült megnyitni a filet akkor kivétel jelzi 
     if(file.fail()) throw "File open error!";
+
+    fileName = path;
+}
+
+FileSaver::~FileSaver(){
+    file.close();
+    Histo histo;
+    HistoMaker histoMaker;
+    try{
+        histoMaker.GetHistoFromPNG(fileName, histo);
+    }catch(const char*){
+        try{
+            histoMaker.GetHistoFromBMP(fileName, histo);
+        }catch(const char*){
+            // Nem PNG, vagy BMP volt
+            return;
+        }
+    }
+    histoMaker.SaveHistoToBMP(fileName, histo);
 }
 
 uint64_t FileSaver::Write(const char* buffer, int64_t bufferlen){
