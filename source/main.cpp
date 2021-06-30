@@ -17,17 +17,8 @@
 #include "argumentreader.h"
 #include "filesavemanager.h"
 
-// + server leallas
-// + szalak evarasa
-// + kimanto osztaly (konyvtar csinalas) (manager, peldany)
-// + parameter beolvaso
-// - png bmp
-// - doksi, komment
-// + wait a szignálnál
-// - docker
-
-std::condition_variable cv; /*!< Signal értesités */ 
-std::mutex mtx;             /*!< Mutex a signalhoz */
+std::condition_variable cv; /*< Signal értesités */ 
+std::mutex mtx;             /*< Mutex a signalhoz */
 
  // Signal esetén végzenő feladat 
 void termApp(int sig){
