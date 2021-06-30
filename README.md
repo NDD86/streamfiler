@@ -28,9 +28,10 @@ A streamfiler egy porton figyelő alkalmazás, ami a csatlakozott connection tar
 ![](https://raw.githubusercontent.com/NDD86/streamfiler/main/structure.bmp)
 # Fordíts
 #### Make nélkül
+Be kell állni a source könyvtárba és kiadni az alábbi parancsot:
 g++ main.cpp posixserver.cpp argumentreader.cpp filesavemanager.cpp filesaver.cpp histomaker.cpp -std=c++17 -lstdc++fs -lpthread -lpng -lz -Wall -O2 -o streamfiler
 #### Make-kel
-A forrás gyökerében ki kell adni a make parancsot
+A source könyvtárban ki kell adni a make parancsot
 #### Docker
 A repo tartalmaz egy Dockerfile-t
 ###### Image készítés
