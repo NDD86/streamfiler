@@ -31,6 +31,16 @@ A streamfiler egy porton figyelő alkalmazás, ami a csatlakozott connection tar
 g++ main.cpp posixserver.cpp argumentreader.cpp filesavemanager.cpp filesaver.cpp histomaker.cpp -std=c++17 -lstdc++fs -lpthread -lpng -lz -Wall -O2 -o streamfiler
 #### Make-kel
 A forrás gyökerében ki kell adni a make parancsot
+#### Docker
+A repo tartalmaz egy Dockerfile-t
+###### Image készítés
+docker build -t streamfiler .
+###### Image futtatása
+docker run -dit  streamfiler - parancs kiadáa után megjelenik a container azonositó
+docker inspect --format='{{json .NetworkSettings.Networks}}' [container azonositó] - visszaadja a container IP-jét
+docker container attach [container azonositó] - kapcsopódás a containerhoz
+Ezek után a ./streamfiler hívása megfelelő paraméterekkel futtatja a programot.
+
 #### Használt eszközök
 * BMP olvasásra ,írásra a http://partow.net/programming/bitmap/index.html oldalon található hpp filet használtam
 * PNG olvasásra a libpng-t
